@@ -1,4 +1,4 @@
-// index.js
+const serverless = require('serverless-http');
 const express = require('express');
 const dotenv = require('dotenv');
 const ChatChain = require('./chatChain');
@@ -6,8 +6,6 @@ const ChatChain = require('./chatChain');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3002;
-
 app.use(express.json());
 
 app.post('/ask', async (req, res) => {
@@ -27,6 +25,4 @@ app.post('/ask', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports.handler = serverless(app);
