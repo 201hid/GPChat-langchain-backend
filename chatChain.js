@@ -15,7 +15,7 @@ class ChatChain {
         "consultationSummary": {
           "patientSymptoms": "List the patient's symptoms.",
           "possibleDiagnosis": ["List possible diagnoses based on the symptoms."],
-          "nextStepRecommendations": ["Provide recommendations for next steps including tests and consultations."]
+          "nextStepRecommendations": ["Provide recommendati  acons for next steps including tests and consultations, each item separated by a comma."]
         }
       }
 
@@ -23,7 +23,7 @@ class ChatChain {
       Consultation Summary:
       Patient Symptoms: [List of symptoms]
       Possible Diagnosis: [List of possible diagnoses]
-      Next Step Recommendations: [List of recommendations]`
+      Next Step Recommendations: [List of recommendations, each item separated by a comma, in a natural, empathic, and advisory tone]`
     };
 
     const userMessage = { role: "user", content: prompt };
