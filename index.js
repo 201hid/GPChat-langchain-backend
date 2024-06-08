@@ -2,11 +2,13 @@ const serverless = require('serverless-http');
 const express = require('express');
 const dotenv = require('dotenv');
 const ChatChain = require('./chatChain');
+const cors = require('cors'); // Import the cors package
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors()); // Enable CORS for all origins
 
 app.post('/ask', async (req, res) => {
   const { question } = req.body;
